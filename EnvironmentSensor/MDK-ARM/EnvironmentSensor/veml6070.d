@@ -1,5 +1,5 @@
-environmentsensor\veml6070.o: ..\VEML6070\VEML6070.c
-environmentsensor\veml6070.o: ..\VEML6070\VEML6070.h
+environmentsensor\veml6070.o: ..\Hardware\VEML6070\VEML6070.c
+environmentsensor\veml6070.o: ..\Hardware\VEML6070\VEML6070.h
 environmentsensor\veml6070.o: ../Core/Inc/i2c.h
 environmentsensor\veml6070.o: ../Core/Inc/main.h
 environmentsensor\veml6070.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
@@ -39,4 +39,19 @@ environmentsensor\veml6070.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_
 environmentsensor\veml6070.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
 environmentsensor\veml6070.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 environmentsensor\veml6070.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
-environmentsensor\veml6070.o: ..\TemperatureHumidityIllumination\Tem_Hum_ill.h
+environmentsensor\veml6070.o: ../Core/Inc/i2c.h
+environmentsensor\veml6070.o: ../Core/Inc/usart.h
+environmentsensor\veml6070.o: ../Core/Inc/main.h
+environmentsensor\veml6070.o: ../USB_DEVICE/App/usb_device.h
+environmentsensor\veml6070.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+environmentsensor\veml6070.o: ../USB_DEVICE/Target/usbd_conf.h
+environmentsensor\veml6070.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+environmentsensor\veml6070.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+environmentsensor\veml6070.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\string.h
+environmentsensor\veml6070.o: ../Core/Inc/gpio.h
+environmentsensor\veml6070.o: ..\Hardware\TemperatureHumidityIllumination\Tem_Hum_ill.h
+environmentsensor\veml6070.o: ..\Hardware\VEML6070\VEML6070.h
+environmentsensor\veml6070.o: ../Core/Inc/adc.h
+environmentsensor\veml6070.o: ..\Hardware\Noise\noise.h
+environmentsensor\veml6070.o: ..\Hardware\Co2\co2.h
+environmentsensor\veml6070.o: ..\Hardware\Pm\particulate_matter.h

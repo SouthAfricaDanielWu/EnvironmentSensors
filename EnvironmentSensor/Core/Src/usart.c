@@ -25,37 +25,6 @@
 
 
 /*-----USART2--PM25-----------------------------*/
-#define UART2RxBuffer_Size 1
-uint8_t UART2RxBuffer[UART2RxBuffer_Size];
-uint16_t PM25_concentration;
-uint16_t PM10_concentration;
-PARTICULATE_MATTER _particulate_matter_msg;
-static uint8_t particulate_matter_rx_counter=0;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* USER CODE END 0 */
 
@@ -424,57 +393,6 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
   /* USER CODE END USART3_MspDeInit 1 */
   }
-}
-
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if(huart->Instance==USART2)//判断是否是串口2										
-	{
-			if( particulate_matter_rx_counter ==0 )//起始位 0
-				{
-					//Receive package header
-					if( UART2RxBuffer[0] != 0x42 )
-					{
-						particulate_matter_rx_counter = 0;
-						//o2_check_sum = 0;
-					}
-					else
-					{
-						++particulate_matter_rx_counter;
-						//o2_check_sum += UART2RxBuffer[0];
-					}
-				}
-        else if (particulate_matter_rx_counter==1)
-        {
-          if( UART2RxBuffer[0] != 0x4d )
-					{
-						particulate_matter_rx_counter = 0;
-						//o2_check_sum = 0;
-					}
-					else
-					{
-						++particulate_matter_rx_counter;
-						//o2_check_sum += UART2RxBuffer[0];
-					}
-        }
-				else if(particulate_matter_rx_counter<31&&particulate_matter_rx_counter>1)
-				{
-				((uint8_t *)&_particulate_matter_msg)[ particulate_matter_rx_counter - 2 ] = UART2RxBuffer[0];
-				 ++particulate_matter_rx_counter;
-				}
-				else if(particulate_matter_rx_counter==31)//校验和=低字节+命令符+分辨率
-				{	
-				((uint8_t *)&_particulate_matter_msg)[ particulate_matter_rx_counter-2 ] = UART2RxBuffer[0];
-          PM25_concentration=((_particulate_matter_msg.particulate_matter_pm25_cf_high)*256+_particulate_matter_msg.particulate_matter_pm25_cf_low);
-					PM10_concentration=((_particulate_matter_msg.particulate_matter_pm10_cf_high)*256+_particulate_matter_msg.particulate_matter_pm10_cf_low);
-        	printf("particulate_matter_pm25_cf_high :%hu  particulate_matter_pm25_cf_low: %hu \r\n",_particulate_matter_msg.particulate_matter_pm25_cf_high,_particulate_matter_msg.particulate_matter_pm25_cf_low);
-					printf(" pm25 concentration: %hu ug/m3 ------- pm10 concentration: %hu ug/m3\r\n",PM25_concentration,PM10_concentration);
-//					printf("RECIEVE PM SUCCESS\r\n");
-				 particulate_matter_rx_counter = 0;	
-				}
-		 while((HAL_UART_Receive_IT(&huart2, UART2RxBuffer, UART2RxBuffer_Size))==HAL_OK); 		//Enable Receive Interupt
-	}
 }
 
 /* USER CODE BEGIN 1 */

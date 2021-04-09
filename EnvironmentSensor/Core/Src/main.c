@@ -19,13 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "i2c.h"
-#include "usart.h"
-#include "usb_device.h"
-#include "gpio.h"
-#include "Tem_Hum_ill.h"
-#include "VEML6070.h"
-#include "adc.h"
+
 Sensor_Data_TypeDef Sensor_Data;
 
 /* Private includes ----------------------------------------------------------*/
@@ -115,51 +109,85 @@ int main(void)
   MX_USB_DEVICE_Init();
 	
 	//uv ini
-	VEML6070_Init();
+	UltravioletRay_Init();
 	
-	//battery ini
+	//battery ini--1.8
 	MX_ADC1_Init();
 	
 	//tem-hum-lux ini
 	Init_Tem_Hum_Ill_Sensor();
 	
 	//USART-2 pm25/pm10
-	HAL_UART_Receive_IT(&huart2, (uint8_t *)UART2RxBuffer,1);
-	//HAL_UART_Receive_IT(&huart5, Noise_uart,10);
+	Sensor_PM_Init();
 	
-  /* USER CODE BEGIN 2 */
+	//USART-3 CO2	
+	Sensor_Co2_Init();
+	
+	//UART-5 Noise 
+	Sensor_Noise_Init();
 
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
 		
-		//TEM HUM LUX 
-		Tem_Hum_Ill_Sensor_Read_Data();
-		HAL_GPIO_TogglePin(GPIOD,RED_LED_Pin);
-		HAL_Delay(1000);
-		printf("\r\n******************************Lux Value is  %d\r\n", (int)Sensor_Data.Lux);
-		printf("\r\n******************************Humidity is  %0.2f\r\n",Sensor_Data.Humidity);
-		printf("\r\n******************************Temperature is  %0.2f\r\n",Sensor_Data.Temperature);
-		
+		//TEM HUM LUX--Test Success 
+//		Tem_Hum_Ill_Sensor_Read_Data();
+//		HAL_GPIO_TogglePin(GPIOD,RED_LED_Pin);
+//		HAL_Delay(1000);
+//		printf("\r\n******************************Lux Value is  %d\r\n", (int)Sensor_Data.Lux);
+//		printf("\r\n******************************Humidity is  %0.2f\r\n",Sensor_Data.Humidity);
+//		printf("\r\n******************************Temperature is  %0.2f\r\n",Sensor_Data.Temperature);
+//		
 
 		//UV value
-		VEML6070_Read_Data();
-		HAL_GPIO_TogglePin(ULTRAVIOLET_LED_GPIO_Port,ULTRAVIOLET_LED_Pin);		
-		HAL_Delay(1000);
-		printf("\r\n******************************ULTRAVIOLET is  %d\r\n", (int)Sensor_Data.Ultraviolet);
+//		VEML6070_Read_Data();
+//		HAL_GPIO_TogglePin(ULTRAVIOLET_LED_GPIO_Port,ULTRAVIOLET_LED_Pin);		
+//		HAL_Delay(1000);
+//		printf("\r\n******************************ULTRAVIOLET is  %d\r\n", (int)Sensor_Data.Ultraviolet);
+//		
 		
-		
-		//ADC--Battery
-		HAL_Delay(500);
-		Get_Battery_Value();
-		printf("\r\n******************************Battery is  %0.2f\r\n", Sensor_Data.Battery);
-		
-		
-		HAL_Delay(1000);
+//		//ADC--Battery--Test Success
+//		HAL_Delay(500);
+//		Get_Battery_Value();
+//		printf("\r\n******************************Battery is  %0.2f\r\n", Sensor_Data.Battery);
+//		
+	
+	
+	
+		//USART2 pm	--Test Success
+//			Read_PM();
+//			HAL_Delay(1000);
+			
+			//USART3 co2--Test in UART5 com Success,USART3 Failed
+//			HAL_UART_Transmit(&huart3,UART3TxBuffer,8,0xFFFF);
+//			HAL_Delay(1000);
+//						
+//			HAL_UART_Transmit(&huart2,Co2_uart,14,0xFFFF);
+//			HAL_Delay(1000);
+//			
+//			Read_Co2();
+//			HAL_Delay(1000);
+//			
+//			printf("USART2-co2-send success\r\n");
+//			HAL_Delay(1000);
+			
+			
+			
+			//UART5 Noise--Test Success
+//			HAL_UART_Transmit(&huart5,UART5TxBuffer,8,0xFFFF);
+//			HAL_Delay(1000);
+//						
+//			HAL_UART_Transmit(&huart2,Noise_uart,14,0xFFFF);
+//			HAL_Delay(1000);
+//			
+//			Read_Noise();
+//			HAL_Delay(1000);
+//				
+//			printf("USART3-noise-send success\r\n");
+//			HAL_Delay(1000);
+			
+			
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

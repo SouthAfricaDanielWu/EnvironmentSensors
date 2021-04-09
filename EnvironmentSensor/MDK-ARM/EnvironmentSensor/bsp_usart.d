@@ -39,3 +39,18 @@ environmentsensor\bsp_usart.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal
 environmentsensor\bsp_usart.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
 environmentsensor\bsp_usart.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdio.h
 environmentsensor\bsp_usart.o: ../Core/Inc/main.h
+environmentsensor\bsp_usart.o: ../Core/Inc/i2c.h
+environmentsensor\bsp_usart.o: ../Core/Inc/main.h
+environmentsensor\bsp_usart.o: ../Core/Inc/usart.h
+environmentsensor\bsp_usart.o: ../USB_DEVICE/App/usb_device.h
+environmentsensor\bsp_usart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+environmentsensor\bsp_usart.o: ../USB_DEVICE/Target/usbd_conf.h
+environmentsensor\bsp_usart.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+environmentsensor\bsp_usart.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\string.h
+environmentsensor\bsp_usart.o: ../Core/Inc/gpio.h
+environmentsensor\bsp_usart.o: ..\Hardware\TemperatureHumidityIllumination\tem_Hum_lux.h
+environmentsensor\bsp_usart.o: ..\Hardware\Ultravioletray\ultravioletray.h
+environmentsensor\bsp_usart.o: ../Core/Inc/adc.h
+environmentsensor\bsp_usart.o: ..\Hardware\Noise\noise.h
+environmentsensor\bsp_usart.o: ..\Hardware\Co2\co2.h
+environmentsensor\bsp_usart.o: ..\Hardware\Pm\particulate_matter.h

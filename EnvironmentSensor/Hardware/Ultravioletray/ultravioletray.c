@@ -1,7 +1,5 @@
-#include "VEML6070.h"
-#include "stm32l4xx.h"
-#include "i2c.h"
-#include "Tem_Hum_ill.h"
+#include "ultravioletray.h"
+
 
 float Ultraviolet_concentration;
 
@@ -11,7 +9,7 @@ float Ultraviolet_concentration;
 * 参    数: 无
 * 返 回 值: 无
 ***************************************************************/
-void VEML6070_Init(void)
+void UltravioletRay_Init(void)
 { 
 		//MX_I2C2_Init();
 	  uint8_t t_Data = 0x06;
@@ -59,12 +57,12 @@ float Convert_VEML6070(void)
 	
 	Start_VEML6070_High();
 	HAL_Delay(180);
-	HAL_I2C_Master_Receive(&hi2c2, VEML6070_SLAVE_ADDRESS+1,BUF,1,0xff); 
+	HAL_I2C_Master_Receive(&hi2c2, VEML6070_SLAVE_ADDRESS,BUF,1,0xff); 
 	result_high=BUF[0];
 	
 	Start_VEML6070_Low();
 	HAL_Delay(180);
-	HAL_I2C_Master_Receive(&hi2c2, VEML6070_SLAVE_ADDRESS+1,BUF,1,0xff); 
+	HAL_I2C_Master_Receive(&hi2c2, VEML6070_SLAVE_ADDRESS,BUF,1,0xff); 
 	result_low=BUF[0];
 	
 	result_uv=(result_high<<8)+result_low;
@@ -72,7 +70,7 @@ float Convert_VEML6070(void)
 }
 
 
-void VEML6070_Read_Data(void){
+void UltravioletRay_Read_Data(void){
 	Sensor_Data.Ultraviolet=Convert_VEML6070();
 }
 

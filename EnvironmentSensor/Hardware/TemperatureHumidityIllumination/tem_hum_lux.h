@@ -33,23 +33,7 @@
 
 void Init_Tem_Hum_Ill_Sensor(void);
 void Tem_Hum_Ill_Sensor_Read_Data(void);
-/* 传感器数据类型定义 ------------------------------------------------------------*/
-typedef struct
-{
-		float    Lux;							//光照强度
-		float    Humidity;        //湿度
-    float    Temperature;     //温度
-		float 	 PM25;
-		float    Noise;
-		float    CO2;
-		float 	 Ultraviolet;
-		float    Battery;
-		float    Press;
-		float    WindSpeed;
-		float    WindDirection;
-} Sensor_Data_TypeDef;
 
-extern Sensor_Data_TypeDef Sensor_Data;
 
 
 #endif

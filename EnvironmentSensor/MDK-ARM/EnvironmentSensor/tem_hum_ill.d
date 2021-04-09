@@ -1,5 +1,5 @@
-environmentsensor\tem_hum_ill.o: ..\TemperatureHumidityIllumination\Tem_Hum_ill.c
-environmentsensor\tem_hum_ill.o: ..\TemperatureHumidityIllumination\Tem_Hum_ill.h
+environmentsensor\tem_hum_ill.o: ..\Hardware\TemperatureHumidityIllumination\tem_Hum_ill.c
+environmentsensor\tem_hum_ill.o: ..\Hardware\TemperatureHumidityIllumination\Tem_Hum_ill.h
 environmentsensor\tem_hum_ill.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
 environmentsensor\tem_hum_ill.o: ../Core/Inc/stm32l4xx_hal_conf.h
 environmentsensor\tem_hum_ill.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h
@@ -39,3 +39,18 @@ environmentsensor\tem_hum_ill.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_h
 environmentsensor\tem_hum_ill.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
 environmentsensor\tem_hum_ill.o: ../Core/Inc/i2c.h
 environmentsensor\tem_hum_ill.o: ../Core/Inc/main.h
+environmentsensor\tem_hum_ill.o: ../Core/Inc/i2c.h
+environmentsensor\tem_hum_ill.o: ../Core/Inc/usart.h
+environmentsensor\tem_hum_ill.o: ../Core/Inc/main.h
+environmentsensor\tem_hum_ill.o: ../USB_DEVICE/App/usb_device.h
+environmentsensor\tem_hum_ill.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+environmentsensor\tem_hum_ill.o: ../USB_DEVICE/Target/usbd_conf.h
+environmentsensor\tem_hum_ill.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+environmentsensor\tem_hum_ill.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+environmentsensor\tem_hum_ill.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\string.h
+environmentsensor\tem_hum_ill.o: ../Core/Inc/gpio.h
+environmentsensor\tem_hum_ill.o: ..\Hardware\Ultravioletray\ultravioletray.h
+environmentsensor\tem_hum_ill.o: ../Core/Inc/adc.h
+environmentsensor\tem_hum_ill.o: ..\Hardware\Noise\noise.h
+environmentsensor\tem_hum_ill.o: ..\Hardware\Co2\co2.h
+environmentsensor\tem_hum_ill.o: ..\Hardware\Pm\particulate_matter.h

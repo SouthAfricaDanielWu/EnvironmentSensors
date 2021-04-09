@@ -29,6 +29,17 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
+#include "stm32l4xx.h"
+#include "i2c.h"
+#include "usart.h"
+#include "usb_device.h"
+#include "gpio.h"
+#include "tem_Hum_lux.h"
+#include "ultravioletray.h"
+#include "adc.h"
+#include "noise.h"
+#include "co2.h"	
+#include "particulate_matter.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -88,7 +99,6 @@ extern "C" {
 #define NOISE_LED_Pin GPIO_PIN_15
 #define NOISE_LED_GPIO_Port GPIOF
 
-
 //ATMOSPHERIC_PRESSURE--ON/OFF
 #define ATMOSPHERIC_PRESS_ON_OFF_Pin GPIO_PIN_15
 #define ATMOSPHERIC_PRESS_ON_OFF_Port GPIOD
@@ -98,7 +108,6 @@ extern "C" {
 //ATMOSPHERIC_PRESSURE--LED
 #define ATMOSPHERIC_PRESSURE_LED_Pin GPIO_PIN_2
 #define ATMOSPHERIC_PRESSURE_LED_GPIO_Port GPIOG
-
 
 //ILLUMINATION--ON_OFF
 #define ILLUMINATION_ON_OFF_Pin GPIO_PIN_3
@@ -110,7 +119,6 @@ extern "C" {
 #define ILLUMINATION_LED_Pin GPIO_PIN_4
 #define ILLUMINATION_LED_GPIO_Port GPIOG
 
-
 //ULTRAVIOLET--ON/OFF
 #define ULTRAVIOLET_ON_OFF_Pin GPIO_PIN_5
 #define ULTRAVIOLET_ON_OFF_Port GPIOG
@@ -121,7 +129,6 @@ extern "C" {
 #define ULTRAVIOLET_LED_Pin GPIO_PIN_6
 #define ULTRAVIOLET_LED_GPIO_Port GPIOG
 
-
 //RED--LED
 #define RED_LED_Pin GPIO_PIN_1
 #define RED_LED_GPIO_Port GPIOD
@@ -129,7 +136,23 @@ extern "C" {
 #define GREEN_LED_Pin GPIO_PIN_0
 #define GREEN_LED_GPIO_Port GPIOD
 
+/* 传感器数据类型定义 ------------------------------------------------------------*/
+typedef struct
+{
+		float    Lux;							
+		float    Humidity;        
+    float    Temperature;     
+		float 	 PM25;
+		float    Noise;
+		float    CO2;
+		float 	 Ultraviolet;
+		float    Battery;
+		float    Press;
+		float    WindSpeed;
+		float    WindDirection;
+} Sensor_Data_TypeDef;
 
+extern Sensor_Data_TypeDef Sensor_Data;
 
 
 /* USER CODE END Includes */

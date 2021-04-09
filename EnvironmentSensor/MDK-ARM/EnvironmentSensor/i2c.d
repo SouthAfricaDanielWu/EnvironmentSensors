@@ -38,3 +38,19 @@ environmentsensor\i2c.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h
 environmentsensor\i2c.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
 environmentsensor\i2c.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
 environmentsensor\i2c.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
+environmentsensor\i2c.o: ../Core/Inc/i2c.h
+environmentsensor\i2c.o: ../Core/Inc/usart.h
+environmentsensor\i2c.o: ../Core/Inc/main.h
+environmentsensor\i2c.o: ../USB_DEVICE/App/usb_device.h
+environmentsensor\i2c.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+environmentsensor\i2c.o: ../USB_DEVICE/Target/usbd_conf.h
+environmentsensor\i2c.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+environmentsensor\i2c.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+environmentsensor\i2c.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\string.h
+environmentsensor\i2c.o: ../Core/Inc/gpio.h
+environmentsensor\i2c.o: ..\Hardware\TemperatureHumidityIllumination\tem_Hum_lux.h
+environmentsensor\i2c.o: ..\Hardware\Ultravioletray\ultravioletray.h
+environmentsensor\i2c.o: ../Core/Inc/adc.h
+environmentsensor\i2c.o: ..\Hardware\Noise\noise.h
+environmentsensor\i2c.o: ..\Hardware\Co2\co2.h
+environmentsensor\i2c.o: ..\Hardware\Pm\particulate_matter.h

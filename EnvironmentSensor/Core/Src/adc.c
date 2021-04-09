@@ -19,7 +19,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
-#include "Tem_Hum_ill.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -139,7 +138,8 @@ void Get_Battery_Value(void)
 	HAL_ADC_Stop(&hadc1);
 	
 		//ad trans value
-	Sensor_Data.Battery=adcx*(5.0/4096);
+	Sensor_Data.Battery=((float)adcx)*(3.3/4096)*2;
+	
 }
 
 

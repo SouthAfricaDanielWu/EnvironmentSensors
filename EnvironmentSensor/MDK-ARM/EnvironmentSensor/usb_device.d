@@ -43,6 +43,17 @@ environmentsensor\usb_device.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\
 environmentsensor\usb_device.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 environmentsensor\usb_device.o: D:\Program Files\keil5\ARM\ARMCC\Bin\..\include\string.h
 environmentsensor\usb_device.o: ../Core/Inc/main.h
+environmentsensor\usb_device.o: ../Core/Inc/i2c.h
+environmentsensor\usb_device.o: ../Core/Inc/main.h
+environmentsensor\usb_device.o: ../Core/Inc/usart.h
+environmentsensor\usb_device.o: ../USB_DEVICE/App/usb_device.h
+environmentsensor\usb_device.o: ../Core/Inc/gpio.h
+environmentsensor\usb_device.o: ..\Hardware\TemperatureHumidityIllumination\tem_Hum_lux.h
+environmentsensor\usb_device.o: ..\Hardware\Ultravioletray\ultravioletray.h
+environmentsensor\usb_device.o: ../Core/Inc/adc.h
+environmentsensor\usb_device.o: ..\Hardware\Noise\noise.h
+environmentsensor\usb_device.o: ..\Hardware\Co2\co2.h
+environmentsensor\usb_device.o: ..\Hardware\Pm\particulate_matter.h
 environmentsensor\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
 environmentsensor\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
 environmentsensor\usb_device.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h

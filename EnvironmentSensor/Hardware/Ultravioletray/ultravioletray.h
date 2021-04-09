@@ -1,9 +1,8 @@
-#ifndef _VEML6070_H
-#define _VEML6070_H
+#ifndef _ULTRAVIOLETRAY_H
+#define _ULTRAVIOLETRAY_H
 
-#include "i2c.h"
 #include "main.h"
-//#include "dwt.h"
+
 
 #define VEML6070_SLAVE_ADDRESS    0x70
 #define VEML6070_READ_VALUE1      0x71   //紫外线数据低8位
@@ -26,11 +25,8 @@
 
 extern float Ultraviolet_concentration;
 
-void VEML6070_Init(void);
-void VEML6070_Read_Data(void);
-
-
-
+void UltravioletRay_Init(void);
+void UltravioletRay_Read_Data(void);
 
 
 #endif
